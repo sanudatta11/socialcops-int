@@ -5,13 +5,16 @@
 let express = require('express');
 let router = express.Router();
 let jwt = require('jsonwebtoken');
+let jsonpatch = require('json-patch');
+
 let config = require('../config');
 let auth = require('./auth');
+let methodsWork = require('./methodsWork');
 
-router.use(function(req, res, next) {
+router.use(function (req, res, next) {
     let token = req.body.token || req.query.token || req.headers.authorization;
     if (token) {
-        jwt.verify(token, config.jwt_token, function(err, decoded) {
+        jwt.verify(token, config.jwt_token, function (err, decoded) {
 
             if (err) {
                 console.log(err);
@@ -32,5 +35,9 @@ router.use(function(req, res, next) {
         });
     }
 });
+
+router.post('/jsonPatch',methodsWork.jsonPatch);
+
+
 
 module.exports = router;
