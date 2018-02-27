@@ -2,18 +2,20 @@
  * Created by sanu on 27/2/18.
  */
 
-var express = require('express');
-var router = express.Router();
-var jwt = require('jsonwebtoken');
+let express = require('express');
+let router = express.Router();
+let jwt = require('jsonwebtoken');
+let config = require('../config');
+let auth = require('./auth');
 
 router.use(function(req, res, next) {
-    var token = req.body.token || req.query.token || req.headers.authorization;
+    let token = req.body.token || req.query.token || req.headers.authorization;
     if (token) {
-        jwt.verify(token, 'supersecret', function(err, decoded) {
+        jwt.verify(token, config.jwt_token, function(err, decoded) {
 
             if (err) {
                 console.log(err);
-                return res.status(403).json({
+                return res.status(401).json({
                     success: false,
                     message: 'Failed to authenticate token.'
                 });
@@ -30,3 +32,5 @@ router.use(function(req, res, next) {
         });
     }
 });
+
+module.exports = router;
