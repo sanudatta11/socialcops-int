@@ -8,8 +8,8 @@ let bodyParser = require('body-parser');
 let index = require('./routes/index');
 
 // including routes files
-var routes = require('./routes/route.js');
-var auth = require('./routes/auth.js');
+let routes = require('./routes/route.js');
+let auth = require('./routes/auth.js');
 
 let app = express();
 let server = require('http');

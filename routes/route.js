@@ -37,6 +37,7 @@ router.use(function (req, res, next) {
 });
 
 router.post('/jsonPatch',methodsWork.jsonPatch);
+router.post('/thumbnail',methodsWork.thumbnail);
 
 
 
