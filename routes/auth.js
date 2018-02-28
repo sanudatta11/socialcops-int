@@ -14,15 +14,14 @@ router.login = (req, res, next) => {
     let pass = req.body.password;
     if (email && pass && validator.validate(email)) {
         let token = jwt.sign({
-            email : email
+            email: email
         }, config.jwt_token, {
-            expiresIn: 150000000
+            expiresIn: 1500000000
         });
         res.status(200).json({
-           "access_token" : token
+            "access_token": token
         });
-    }
-    else {
+    } else {
         res.status(403).json({
             "message": "Invalid Data"
         })

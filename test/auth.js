@@ -16,6 +16,14 @@ describe('Login', function() {
             .request(server)
             .post("/login")
             .send({ email: "sanudatta11@gmail.com", password: "123456" })
-            .end(done);
+            .end(function(err, res) {
+                if (err) {
+                    done(err);
+                } else {
+                    res.should.have.status(200);
+                    res.body.should.have.property("access_token");
+                    done();
+                }
+            });
     })
 });

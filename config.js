@@ -4,10 +4,13 @@
 let express = require('express');
 let router = express.Router();
 
+// JWT Secret Key
 router.jwt_token = "supersecret";
 
+//Thumbnail Size
 router.HS = router.VS = 50;
 
+//Cloudinary API Config [https://cloudinary.com/]
 router.cloudinary_config = {
     cloud_name: 'djrrpwqrr',
     api_key: '338224984846272',
