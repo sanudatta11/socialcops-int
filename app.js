@@ -5,7 +5,6 @@ let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
 
-let index = require('./routes/index');
 let config = require("./config");
 
 // including routes files
@@ -14,6 +13,15 @@ let auth = require('./routes/auth.js');
 
 let app = express();
 let server = require('http');
+
+//Swagger UI
+const swaggerUi = require('swagger-ui-express');
+
+const swaggerDocument = require('./swagger.json');
+// const swaggerDocument = require('./swagger.yaml');
+let options = {
+    explorer : true
+};
 
 //Including Winston
 let winston = require("winston");
@@ -35,9 +43,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', index);
+app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument,options));
 app.post('/login', auth.login);
 app.use('/api', routes);
+
 console.log("Express Server on port = " + port);
 // winston.log("info", "Express Server on port = " + port);
 
