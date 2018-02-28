@@ -17,4 +17,11 @@ router.cloudinary_config = {
     api_secret: 'bl1N27mQp0C7fZ0C3-4lZttRVXo'
 };
 
+router.winston_conf = {
+    token: "27c9d4c2-112f-4a8e-9842-415987624df9",
+    subdomain: "sanudatta11",
+    tags: ["Winston-NodeJS"],
+    json: true
+};
+
 module.exports = router;

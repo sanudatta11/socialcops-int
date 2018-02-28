@@ -6,6 +6,7 @@ let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
 
 let index = require('./routes/index');
+let config = require("./config");
 
 // including routes files
 let routes = require('./routes/route.js');
@@ -13,6 +14,11 @@ let auth = require('./routes/auth.js');
 
 let app = express();
 let server = require('http');
+
+//Including Winston
+let winston = require("winston");
+require("winston-loggly-bulk");
+winston.add(winston.transports.Loggly, config.winston_conf);
 
 let port = process.env.port || 8000;
 let backend = server.createServer(app).listen(port);
@@ -29,27 +35,28 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/',index);
+app.get('/', index);
 app.post('/login', auth.login);
 app.use('/api', routes);
-console.log("Express Server on port = "+port);
+console.log("Express Server on port = " + port);
+// winston.log("info", "Express Server on port = " + port);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  let err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+    let err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
 // error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
 });
 
 module.exports = app;

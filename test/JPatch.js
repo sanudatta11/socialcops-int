@@ -12,6 +12,10 @@ let jwt_token =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbnVAZ21haWwuY29tIiwiaWF0IjoxNTE5ODMyMTU0LCJleHAiOjMwMTk4MzIxNTR9.YGHeh_Q9a6Kx0huHls09M-PXdVUtuvGRaY943MY-iNg";
 let imageUrl = "https://images-na.ssl-images-amazon.com/images/I/51siK7RY4rL.jpg";
 
+//Including Winston
+let winston = require("winston");
+require("winston-loggly-bulk");
+
 describe("JSON Patch", function() {
     this.timeout(15000);
     it("Sends a JSON Document and a JSON Patch and verifies the returned document", function(done) {
