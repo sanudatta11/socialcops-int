@@ -5,12 +5,16 @@ let express = require('express');
 let router = express.Router();
 let jwt = require('jsonwebtoken');
 let async = require('async');
+let validator = require("email-validator");
+
 let config = require('../config');
 
 router.login = function (req, res, next) {
-    if (req.body.email && req.body.password) {
+    let email = req.body.email;
+    let pass = req.body.password;
+    if (email && pass && validator.validate(email)) {
         let token = jwt.sign({
-            email : req.body.email
+            email : email
         }, config.jwt_token, {
             expiresIn: 150000000
         });
@@ -20,7 +24,7 @@ router.login = function (req, res, next) {
     }
     else {
         res.status(403).json({
-            "message": "Incomplete Data"
+            "message": "Invalid Data"
         })
     }
 };
