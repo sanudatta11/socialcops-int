@@ -1,0 +1,7 @@
+Istanbul
+Windows:
+    ./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- --exit
+
+Docker:
+    docker run -p 80:8000 -d sanurocks5/socialcops
+    docker pull sanurocks5/socialcops
