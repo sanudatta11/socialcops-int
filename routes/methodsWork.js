@@ -23,25 +23,31 @@ router.jsonPatch = function (req, res, next) {
     let document = req.body.document;
     let patch = req.body.patch;
 
-    if (document && patch) {
-        try {
-            jsonpatch.apply(document, patch);
-            res.status(200).json({
-                document: document
-            })
+    try {
+        if (document && patch) {
+            try {
+                jsonpatch.apply(document, patch);
+                res.status(200).json({
+                    document: document
+                })
+            }
+            catch (err) {
+                console.log("Patch Error");
+                res.status(500).json({
+                    "error": err
+                });
+            }
         }
-        catch (err) {
-            console.log("Patch Error");
-            res.status(500).json({
-                "error": err
+        else {
+            return res.status(403).send({
+                success: false,
+                message: 'Incomplete Data'
             });
         }
-    }
-    else {
-        return res.status(403).send({
-            success: false,
-            message: 'Incomplete Data'
-        });
+    } catch (e) {
+        res.status(501).json({
+            message : "JSON Validation Error"
+        })
     }
 };
 
