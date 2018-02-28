@@ -2,7 +2,7 @@
 /**
  * Created by sanu on 28/2/18.
  */
-
+/*jslint es6 */
 let chai = require("chai");
 let chaiHttp = require("chai-http");
 let server = require("../app");

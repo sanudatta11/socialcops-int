@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-
+/*jslint es6 */
 /**
  * Takes 3 parameters(request,result,next) and returns result data.
  * @param   {object} req be the first object

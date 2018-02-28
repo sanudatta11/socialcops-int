@@ -1,7 +1,7 @@
 /**
  * Created by sanu on 27/2/18.
  */
-
+/*jslint es6 */
 let express = require('express');
 let router = express.Router();
 let jwt = require('jsonwebtoken');
