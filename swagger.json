@@ -56,7 +56,7 @@
         }
       }
     },
-    "/jsonPatch" : {
+    "/api/jsonPatch" : {
       "post" : {
         "tags" : [ "Authorized" ],
         "summary" : "Applies JSON Patch",
@@ -110,7 +110,7 @@
         }
       }
     },
-    "/thumbnail" : {
+    "/api/thumbnail" : {
       "post" : {
         "tags" : [ "Authorized" ],
         "summary" : "Resizes a image and returns it and its new url",

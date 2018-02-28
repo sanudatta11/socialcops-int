@@ -45,7 +45,7 @@ paths:
           description: "Bad input parameter"
           schema:
             $ref: "#/definitions/InvalidLogin"
-  /jsonPatch:
+  /api/jsonPatch:
     post:
       tags:
       - "Authorized"
@@ -88,7 +88,7 @@ paths:
           description: "Fatal Error"
           schema:
             $ref: "#/definitions/FatalError"
-  /thumbnail:
+  /api/thumbnail:
     post:
       tags:
       - "Authorized"
