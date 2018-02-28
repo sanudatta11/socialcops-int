@@ -18,11 +18,10 @@ describe('Login', function() {
             .send({ email: "sanudatta11@gmail.com", password: "123456" })
             .end(function(err, res) {
                 if (err) {
-                    return null;
+                    done(err);
                 }
                 res.should.have.status(200);
-                res.body.should.have.property("status");
-                res.body.should.have.property("token");
+                res.body.should.have.property("access_token");
                 done();
             });
     })

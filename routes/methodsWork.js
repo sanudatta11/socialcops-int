@@ -19,7 +19,7 @@ let magic = {
 
 cloudinary.config(config.cloudinary_config);
 
-router.jsonPatch = function (req, res, next) {
+router.jsonPatch =  (req, res, next) => {
     let document = req.body.document;
     let patch = req.body.patch;
 
@@ -51,7 +51,7 @@ router.jsonPatch = function (req, res, next) {
     }
 };
 
-router.thumbnail = function (req, res, next) {
+router.thumbnail = (req, res, next) => {
     let imgURL = req.body.imageUrl;
     if (imgURL) {
         let options = {

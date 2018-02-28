@@ -9,7 +9,7 @@ let validator = require("email-validator");
 
 let config = require('../config');
 
-router.login = function (req, res, next) {
+router.login = (req, res, next) => {
     let email = req.body.email;
     let pass = req.body.password;
     if (email && pass && validator.validate(email)) {

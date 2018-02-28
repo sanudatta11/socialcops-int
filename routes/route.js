@@ -11,7 +11,7 @@ let config = require('../config');
 let auth = require('./auth');
 let methodsWork = require('./methodsWork');
 
-router.use(function (req, res, next) {
+router.use( (req, res, next) => {
     let token = req.body.token || req.query.token || req.headers.authorization;
     if (token) {
         jwt.verify(token, config.jwt_token, function (err, decoded) {
