@@ -5,8 +5,8 @@
 
 let chai = require('chai');
 let chaiHttp = require('chai-http');
-let should = chai.should();
 let server = require('../app');
+chai.should();
 chai.use(chaiHttp);
 
 describe('Login', function() {
@@ -19,10 +19,11 @@ describe('Login', function() {
             .end(function(err, res) {
                 if (err) {
                     done(err);
+                }else{
+                    res.should.have.status(200);
+                    res.body.should.have.property("access_token");
+                    done();
                 }
-                res.should.have.status(200);
-                res.body.should.have.property("access_token");
-                done();
             });
     })
 });

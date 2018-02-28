@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "login": "mocha test/auth.js",
-    "test" : "mocha"
+    "start": "node app.js",
+    "test": "nodemon --exec \"./node_modules/mocha/bin/mocha --recursive\""
   },
   "dependencies": {
     "async": "^2.6.0",
@@ -17,6 +17,7 @@
     "email-validator": "^1.1.1",
     "express": "~4.15.5",
     "http": "0.0.0",
+    "istanbul": "^0.4.5",
     "jimp": "^0.2.28",
     "json-patch": "^0.7.0",
     "json-validation": "^1.0.4",
@@ -28,6 +29,7 @@
     "serve-favicon": "~2.4.5"
   },
   "devDependencies": {
+    "babel": "^6.23.0",
     "mocha": "^5.0.1"
   }
 }
