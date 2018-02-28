@@ -12,7 +12,7 @@ var router = express.Router();
  * @returns {object} the final result object
  */
 
-router.get('/', function(req, res, next) {
+router.get('/', (req, res, next) => {
     res.render('index', { title: 'SocialCops' });
 });
 
