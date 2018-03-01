@@ -22,18 +22,12 @@ Table of Contents
 -----------------
 
 - [Features](#features)
-- [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
 - [Obtaining API Keys](#obtaining-api-keys)
 - [Project Structure](#project-structure)
 - [List of Packages](#list-of-packages)
-- [Useful Tools and Resources](#useful-tools-and-resources)
-- [Recommended Design Resources](#recommended-design-resources)
-- [Recommended Node.js Libraries](#recommended-nodejs-libraries)
-- [Recommended Client-side Libraries](#recommended-client-side-libraries)
 - [Pro Tips](#pro-tips)
 - [FAQ](#faq)
-- [How It Works](#how-it-works-mini-guides)
 - [Cheatsheets](#cheatsheets)
     - [ES6](#-es6-cheatsheet)
     - [JavaScript Date](#-javascript-date-cheatsheet)
@@ -427,6 +421,9 @@ var yesterday = date.setDate(date.getDate() - 1);
 
 :top: <sub>[**back to top**](#table-of-contents)</sub>
 
+Docker
+----------
+
 <img src="https://tr4.cbsistatic.com/hub/i/r/2016/10/18/831f017c-ee68-4bd6-8a5c-ab31b4d35d6d/resize/770x/1cedcf2f03388a9720835a628a8a9765/dockerhero.jpg" width="200">
 
 ----------
@@ -469,7 +466,7 @@ deployments and custom domain support and free tier support a lot.
 <hr>
 <img src="http://logos-download.com/wp-content/uploads/2016/12/Amazon_Web_Services_logo_AWS.png" width="200">
 
-##Using AWS Console
+## Using AWS Console
 - Login to [AWS Console](https://console.aws.amazon.com/)
 - Click on [Elastic Beanstalk](https://console.aws.amazon.com/elasticbeanstalk/home?region=us-east-1) under Compute Section.
 - Click on **Create New Application** on upper right or center, depending on have you used EBS before or not.
@@ -480,7 +477,7 @@ deployments and custom domain support and free tier support a lot.
 - Choose Upload code in the **Application Code** Option. Select the Zip File there.
 - Click on Create Environment and wait for all workers and Environments to get allocated.
 
-##Using AWS CLI
+## Using AWS CLI
 - Install the AWS CLI on your PC. [LINK](https://docs.aws.amazon.com/cli/latest/userguide/installing.html)
 - Or type
      ```
