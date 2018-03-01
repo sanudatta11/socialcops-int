@@ -8,7 +8,7 @@ Intern Project
 
 Jump to [What's new in 1.0.0?](#changelog)
 
-:bulb: Looking for ES5 code? [Click here](https://github.com/sahat/hackathon-starter/tree/es5).
+:bulb: Looking for ES5 code? [Click here](https://github.com/sanudatta11/socialcops-int/tree/es5).
 
 A Sample application for Intern using **NodeJS**
 
