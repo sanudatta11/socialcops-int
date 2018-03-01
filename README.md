@@ -483,10 +483,10 @@ deployments and custom domain support and free tier support a lot.
 ##Using AWS CLI
 - Install the AWS CLI on your PC. [LINK](https://docs.aws.amazon.com/cli/latest/userguide/installing.html)
 - Or type
- ```
-   pip install awscli --upgrade --user
-   pip install awsebcli --upgrade --user
- ```
+     ```
+       pip install awscli --upgrade --user
+       pip install awsebcli --upgrade --user
+     ```
  
 - We need to first initialize Elastic Beanstalk for the same
   ```
