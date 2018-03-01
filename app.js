@@ -43,9 +43,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument,options));
 app.post('/login', auth.login);
 app.use('/api', routes);
+app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument,options));
+
 
 console.log("Express Server on port = " + port);
 // winston.log("info", "Express Server on port = " + port);
