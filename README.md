@@ -1,8 +1,8 @@
 ![](http://www.startupindex.net/wp-content/uploads/2015/11/SocialCops.png)
 Intern Project 
 =======================
-
-[![Dependency Status](https://david-dm.org/boennemann/badges.svg)](https://david-dm.org/sahat/hackathon-starter) [![Build Status](https://travis-ci.org/sahat/hackathon-starter.svg?branch=master)](https://travis-ci.org/sahat/hackathon-starter) 
+[![Build Status](https://travis-ci.org/sanudatta11/socialcops-int.svg?branch=master)](https://travis-ci.org/sanudatta11/socialcops-int)
+[![Dependency Status](https://david-dm.org/boennemann/badges.svg)](https://david-dm.org/sahat/hackathon-starter) 
 
 **Live Demo**: http://socialcops-dev.us-east-1.elasticbeanstalk.com/
 
